@@ -24,6 +24,8 @@ void	ft_checkfiletype(va_list argp, const char ptr, int *counter)
 		*counter += ft_hexa(va_arg(argp, int));
 	if (ptr == 'X')
 		*counter += ft_hexA(va_arg(argp, int));
+	if (ptr == 'p')
+		*counter += ft_putptr(va_arg(argp, void *));
 }
 
 int ft_printf(const char *ptr, ...)
