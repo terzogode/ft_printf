@@ -7,7 +7,6 @@ int	ft_putunsnbr(unsigned int n)
 
 	i = 0;
 	c = '\0';
-
 	if (n > 9)
 		i += ft_putunsnbr(n / 10);
 	c = (n % 10) + '0';
