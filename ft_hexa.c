@@ -29,8 +29,8 @@ int ft_hexa(int n)
 	}
 	else
 	{
-		ft_hexa(n / 16);
-		ft_hexa(n % 16);
+		i += ft_hexa(n / 16);
+		i += ft_hexa(n % 16);
 	}
 	return (i);
 }

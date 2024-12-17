@@ -1,8 +1,11 @@
-int ft_hexa(unsigned long n)
+#include "ft_printf.h"
+
+int ft_hexp(unsigned long n)
 {
     char    c;
-    int     i = 0;
+    int     i;
 
+    i = 0;
     if (n < 16)
     {
         if (n < 10)
@@ -14,8 +17,8 @@ int ft_hexa(unsigned long n)
     }
     else
     {
-        i += ft_hexa(n / 16);
-        i += ft_hexa(n % 16);
+        i += ft_hexp(n / 16);
+        i += ft_hexp(n % 16);
     }
     return (i);
 }
@@ -25,6 +28,6 @@ int ft_putptr(void *ptr)
     int count = 0;
 
     count += write(1, "0x", 2);
-    count += ft_hexa((unsigned long)ptr);
+    count += ft_hexp((unsigned long)ptr);
     return (count);
 }

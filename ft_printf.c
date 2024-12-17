@@ -26,14 +26,14 @@ void	ft_checkfiletype(va_list argp, const char ptr, int *counter)
 		*counter += ft_hexA(va_arg(argp, int));
 	if (ptr == 'p')
 		*counter += ft_putptr(va_arg(argp, void *));
+	if (ptr == 'u')
+		*counter += ft_putnbr(va_arg(argp, unsigned int));
 }
 
 int ft_printf(const char *ptr, ...)
 {
 	int		counter;
-	char	*res;
 	
-	res = NULL;
 	counter = 0;
 	va_list argp;
 	va_start(argp, ptr);
@@ -49,7 +49,6 @@ int ft_printf(const char *ptr, ...)
 		{
 			ft_putchar(*ptr);
 			ptr++;
-			counter++;
 		}
 	}
 	va_end(argp);
@@ -58,9 +57,25 @@ int ft_printf(const char *ptr, ...)
 
 int main (void)
 {
-	int h;
-	
+	int		h;
+	int		x;
+	void	*ptr;
+
 	h = 0;
-	h = ft_printf("Stampa le seguenti robe %c %s %d %x %X il counter e' %d", 'A', "PORCODDIO", -286, 255, 255, h);
+	x = 42;
+	ptr = &x;
+	h = ft_printf("Stampa le seguenti robe %c\n", 'A');
+	ft_printf("Il counter è %d\n", h);
+	h = ft_printf("Stampa le seguenti robe %s\n", "PORCODDIO");
+	ft_printf("Il counter è %d\n", h);
+	h = ft_printf("Stampa le seguenti robe %d\n", -286);
+	ft_printf("Il counter è %d\n", h);
+	h = ft_printf("Stampa le seguenti robe %x\n", 255);
+	ft_printf("Il counter è %d\n", h);
+	h = ft_printf("Stampa le seguenti robe %X\n", 255);
+	ft_printf("Il counter è %d\n", h);
+	h = ft_printf("Stampa le seguenti robe %p\n", ptr);
+	ft_printf("Il counter è %d\n", h);
+	printf("Stampa le seguenti robe %p\n", ptr);
 	return (0);
 }

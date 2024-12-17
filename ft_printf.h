@@ -24,5 +24,7 @@ int		ft_putstr(char *s);
 int		ft_printf(const char *ptr, ...);
 int		ft_hexa(int n);
 int		ft_hexA(int n);
+int     ft_putptr(void *ptr);
+int	    ft_putunsnbr(unsigned int n);
 
 #endif

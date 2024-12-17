@@ -29,8 +29,8 @@ int ft_hexA(int n)
 	}
 	else
 	{
-		ft_hexA(n / 16);
-		ft_hexA(n % 16);
+		i += ft_hexA(n / 16);
+		i += ft_hexA(n % 16);
 	}
 	return (i);
 }
