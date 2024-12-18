@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:37:17 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/17 19:18:33 by mbrighi          ###   ########.fr       */
+/*   Updated: 2024/12/18 15:32:56 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int	ft_putstr(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
+	if (!s)
+		return (ft_putstr("(null)"));
 	while (s[i] != '\0')
 	{
 		write(1, &s[i], 1);

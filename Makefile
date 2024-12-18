@@ -1,10 +1,10 @@
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
-SRC = ft_hexa.c ft_hexA.c ft_printf.c ft_putchar.c ft_putptr.c ft_putstr.c ft_putnbr.c ft_putunsnbr.c
+SRC = ft_hexlowercase.c ft_hexuppercase.c ft_printf.c ft_putchar.c ft_putptr.c ft_putstr.c ft_putnbr.c ft_putunsnbr.c
 
 OBJECT = $(SRC:.c=.o)
 
