@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 12:49:10 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/18 18:10:41 by mbrighi          ###   ########.fr       */
+/*   Updated: 2024/12/21 15:10:45 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_checkfiletype(va_list argp, const char ptr, int *counter)
 	if (ptr == 'd' || ptr == 'i')
 		*counter += ft_putnbr(va_arg(argp, int));
 	if (ptr == 'x')
-		*counter += ft_hexlowercase(va_arg(argp, unsigned long));
+		*counter += ft_hexlowercase(va_arg(argp, unsigned int));
 	if (ptr == 'X')
-		*counter += ft_hexuppercase(va_arg(argp, unsigned long));
+		*counter += ft_hexuppercase(va_arg(argp, unsigned int));
 	if (ptr == 'p')
 		*counter += ft_putptr(va_arg(argp, void *));
 	if (ptr == 'u')
